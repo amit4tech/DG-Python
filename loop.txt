@@ -1,0 +1,9 @@
+n = int(input("Enter the number"))
+a = int(input("From where?"))
+b = int(input("To where?"))
+
+var = a
+while var <= b:
+	ans = n*var
+	print(n,"x", var, "=", ans)
+	var = var + 1

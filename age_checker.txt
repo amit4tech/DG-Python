@@ -1,0 +1,16 @@
+age = input("Enter your age:")
+age = int(age)
+
+# These are comments
+#agar age < 18 to print("Not eligible to vote")
+#nhi to print("Eligible to vote")
+
+if age < 18 :
+	print("Not eligible")
+else:
+	print("Eligible")
+	if age >= 50:
+		print("Your cost is: 5")
+ 
+	else:
+		print("Your cost is: 10")			

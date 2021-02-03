@@ -1,0 +1,12 @@
+age = input("Enter your age:")
+age = int(age)
+
+
+if age < 18 :
+	print("Not eligible")
+elif age < 50:
+	print("Eligible")
+	print("Your cost is: 10")
+else:
+	print("Eligible")
+	print("Your cost is: 5")

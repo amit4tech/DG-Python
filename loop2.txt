@@ -1,0 +1,12 @@
+n = int(input("Enter n:"))
+line_number = 1
+
+while line_number <= n:
+	var = line_number
+	#i = 1
+	i = n
+	while i >= var:
+		print("*", end=" ")
+		i = i - 1
+	line_number = line_number + 1
+	print("")
