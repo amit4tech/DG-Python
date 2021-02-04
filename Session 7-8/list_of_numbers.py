@@ -1,0 +1,1 @@
+print(*[i for i in range(10000000)], file=open("array.txt", "w"))
