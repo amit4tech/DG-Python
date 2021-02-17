@@ -72,6 +72,8 @@ grid = [[None,None,None], [None,None,None], [None,None,None]]
 rectangles = []
 move = 0
 pause = False
+game_win = False
+
 while True:
 
     screen.fill((255, 255, 255))
@@ -90,19 +92,30 @@ while True:
                 rectangles.append((rect, move))
                 grid[i][j] = move
                 move = 1 - (move == 1)
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_r:
+                grid = [[None,None,None], [None,None,None], [None,None,None]]
+                rectangles = []
+                move = 0
+                pause = False
+                game_win = False
 
-    # if check_win(0) and not pause:
-    #     font_image = font.render("Dot Won", True, (255, 255, 255), (0,0,0))
-    #     rect = font_image.get_rect()
-    #     rect.center = screen.get_rect().center
-    #     screen.blit(font_image, rect)
-    #     pause = True
+
+    if check_win(0) and not pause:
+        font_image = font.render("Dot Won", True, (255, 0, 0), (255,255,255))
+        font_rect = font_image.get_rect()
+        font_rect.center = screen.get_rect().center
+        pause = True
+        game_win = True
     
-    # if check_win(1) and not pause:
-    #     font_image = font.render("Cross Won", True, (255, 255, 255), (0,0,0))
-    #     rect = font_image.get_rect()
-    #     rect.center = screen.get_rect().center
-    #     screen.blit(font_image, rect)
-    #     pause = True
+    if check_win(1) and not pause:
+        font_image = font.render("Cross Won", True, (255, 0, 0), (255,255,255))
+        font_rect = font_image.get_rect()
+        font_rect.center = screen.get_rect().center
+        pause = True
+        game_win = True
+    if game_win:
+        screen.blit(font_image, font_rect)
     pygame.display.flip()
 
